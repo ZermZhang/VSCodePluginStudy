@@ -19,7 +19,23 @@
 				"command": "helloworld.helloWorld",
 				"title": "Hello World"
 			}
-		]
+		],
+		"keybindings": [
+			{
+				"command": "helloworld.helloWorld",
+				"key": "ctrl+f10",
+				"when": "editorTextFocus"
+			}
+		],
+		"menus": {
+			"editor/context": [
+				{
+					"when": "editorFocus",
+					"command": "helloworld.helloWorld",
+					"group": "navigation"
+				}
+			]
+		}
 	},
 	"scripts": {
 		"vscode:prepublish": "npm run compile",
