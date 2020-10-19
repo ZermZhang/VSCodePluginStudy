@@ -34,6 +34,12 @@
 					"command": "helloworld.helloWorld",
 					"group": "navigation"
 				}
+			],
+			"explorer/context": [
+				{
+					"command": "helloworld.helloWorld",
+					"group": "navigation"
+				}
 			]
 		}
 	},
