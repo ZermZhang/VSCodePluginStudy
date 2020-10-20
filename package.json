@@ -11,7 +11,8 @@
 	],
 	"activationEvents": [
 		"onCommand:helloworld.helloWorld",
-		"onCommand:CustomPlugins.reverse"
+		"onCommand:CustomPlugins.reverse",
+		"onCommand:CustomPlugins.deleteall"
 	],
 	"main": "./out/extension.js",
 	"contributes": {
@@ -23,6 +24,10 @@
 			{
 				"command": "CustomPlugins.reverse",
 				"title": "CustomPlugins.reverse"
+			},
+			{
+				"command": "CustomPlugins.deleteall",
+				"title": "CustomPlugins.deleteall"
 			}
 		],
 		"keybindings": [
