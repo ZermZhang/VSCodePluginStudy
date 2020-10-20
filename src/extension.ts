@@ -13,7 +13,7 @@ function helloWorld(context: vscode.ExtensionContext) {
 }
 
 function replace(context: vscode.ExtensionContext) {
-	let disposable = vscode.commands.registerCommand("helloworld.helloWorld", () => {
+	let disposable = vscode.commands.registerCommand("CustomPlugins.reverse", () => {
 		let editor = vscode.window.activeTextEditor;
 		if (!editor) {
 			return;

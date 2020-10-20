@@ -10,7 +10,8 @@
 		"Other"
 	],
 	"activationEvents": [
-		"onCommand:helloworld.helloWorld"
+		"onCommand:helloworld.helloWorld",
+		"onCommand:CustomPlugins.reverse"
 	],
 	"main": "./out/extension.js",
 	"contributes": {
@@ -18,6 +19,10 @@
 			{
 				"command": "helloworld.helloWorld",
 				"title": "Hello World"
+			},
+			{
+				"command": "CustomPlugins.reverse",
+				"title": "CustomPlugins.reverse"
 			}
 		],
 		"keybindings": [
@@ -32,6 +37,11 @@
 				{
 					"when": "editorFocus",
 					"command": "helloworld.helloWorld",
+					"group": "navigation"
+				},
+				{
+					"when": "editorFocus",
+					"command": "CustomPlugins.reverse",
 					"group": "navigation"
 				}
 			],
