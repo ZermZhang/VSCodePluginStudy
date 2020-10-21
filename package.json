@@ -12,7 +12,8 @@
 	"activationEvents": [
 		"onCommand:helloworld.helloWorld",
 		"onCommand:CustomPlugins.reverse",
-		"onCommand:CustomPlugins.deleteall"
+		"onCommand:CustomPlugins.deleteall",
+		"onCommand:CustomPlugins:deleteFromCursor"
 	],
 	"main": "./out/extension.js",
 	"contributes": {
@@ -28,6 +29,10 @@
 			{
 				"command": "CustomPlugins.deleteall",
 				"title": "CustomPlugins.deleteall"
+			},
+			{
+				"command": "CustomPlugins:deleteFromCursor",
+				"title": "CustomPlugins:deleteFromCursor"
 			}
 		],
 		"keybindings": [

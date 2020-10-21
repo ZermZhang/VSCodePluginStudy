@@ -15,6 +15,29 @@ function helloWorld(context: vscode.ExtensionContext) {
 	context.subscriptions.push(disposable)
 }
 
+function del_from_curse(context: vscode.ExtensionContext) {
+	let disposable = vscode.commands.registerCommand("CustomPlugins:deleteFromCursor", () => {
+		let editor = vscode.window.activeTextEditor;
+		
+		if (!editor) {
+			vscode.window.showErrorMessage('the editor is not activate!');
+		}
+		let document = editor?.document
+		let tail_line_cnt = document.lineCount + 1
+
+		const end = new vscode.Position(tail_line_cnt, 0);
+		const select_position = new vscode.Position(editor?.selection.active.line, editor?.selection.active.character);
+		const text = ''
+
+		vscode.window.activeTextEditor?.edit(editBuilder => {
+			editBuilder.replace(new vscode.Range(select_position, end), text)
+		})
+	})
+
+	context.subscriptions.push(disposable)
+}
+
+
 function del_all(context: vscode.ExtensionContext) {
 	let disposable = vscode.commands.registerCommand("CustomPlugins.deleteall", () => {
 		// get the Text editor state
@@ -72,7 +95,7 @@ function reverse(context: vscode.ExtensionContext) {
 	context.subscriptions.push(disposable)
 }
 
-exports.activate = del_all
+exports.activate = del_from_curse
 
 function deactivate() {
 
