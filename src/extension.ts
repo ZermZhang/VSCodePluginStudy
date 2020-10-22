@@ -95,7 +95,23 @@ function reverse(context: vscode.ExtensionContext) {
 	context.subscriptions.push(disposable)
 }
 
-exports.activate = del_from_curse
+function hight_light(context: vscode.ExtensionContext) {
+	let disposable = vscode.commands.registerCommand("CustomPlugins:HightLight", () => {
+		let decorationType = vscode.window.createTextEditorDecorationType({
+			backgroundColor: '#fff'
+		});
+
+		let editor = vscode.window.activeTextEditor;
+
+		editor?.setDecorations(decorationType, [new vscode.Range(0, 0, 0, 1)])
+	})
+
+	context.subscriptions.push(disposable)
+}
+
+
+
+exports.activate = hight_light
 
 function deactivate() {
 

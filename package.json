@@ -13,7 +13,8 @@
 		"onCommand:helloworld.helloWorld",
 		"onCommand:CustomPlugins.reverse",
 		"onCommand:CustomPlugins.deleteall",
-		"onCommand:CustomPlugins:deleteFromCursor"
+		"onCommand:CustomPlugins:deleteFromCursor",
+		"onCommand:CustomPlugins:HightLight"
 	],
 	"main": "./out/extension.js",
 	"contributes": {
@@ -33,6 +34,10 @@
 			{
 				"command": "CustomPlugins:deleteFromCursor",
 				"title": "CustomPlugins:deleteFromCursor"
+			},
+			{
+				"command": "CustomPlugins:HightLight",
+				"title": "CustomPlugins:HightLight"
 			}
 		],
 		"keybindings": [
