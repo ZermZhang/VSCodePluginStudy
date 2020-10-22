@@ -3,10 +3,19 @@
 import * as vscode from 'vscode';
 
 function get_cursor_position(editor: vscode.TextEditor) {
-	const line_num = editor.selection.active.line
-	const col_num = editor.selection.active.line
-	let select_position = new vscode.Position(line_num, col_num)
-	return select_position
+	const line_num = editor.selection.active.line;
+	const col_num = editor.selection.active.line;
+	let cursor_postion = new vscode.Position(line_num, col_num);
+	return cursor_postion
+}
+
+function get_selection_postition(editor: vscode.TextEditor) {
+	let selection = editor?.selection;
+
+	let selection_start = selection?.start;
+	let selection_end = selection?.end;
+
+	return [selection_start, selection_end]
 }
 
 function helloWorld(context: vscode.ExtensionContext) {
@@ -109,10 +118,7 @@ function hight_light(context: vscode.ExtensionContext) {
 		});
 
 		let editor = vscode.window.activeTextEditor;
-		let selection = editor?.selection
-
-		let selection_start = selection?.start
-		let selection_end = selection?.end
+		let [selection_start, selection_end] = get_selection_postition(editor)
 
 		editor?.setDecorations(decorationType, [new vscode.Range(selection_start, selection_end)])
 	})
