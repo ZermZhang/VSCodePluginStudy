@@ -2,6 +2,13 @@
 // Import the module and reference it with the alias vscode in your code below
 import * as vscode from 'vscode';
 
+function get_cursor_position(editor: vscode.TextEditor) {
+	const line_num = editor.selection.active.line
+	const col_num = editor.selection.active.line
+	let select_position = new vscode.Position(line_num, col_num)
+	return select_position
+}
+
 function helloWorld(context: vscode.ExtensionContext) {
 	// 在调试控制台输出日志相关提示信息
 	console.log('Congratulations, your extension "helloWorld" is now active!');
@@ -102,8 +109,12 @@ function hight_light(context: vscode.ExtensionContext) {
 		});
 
 		let editor = vscode.window.activeTextEditor;
+		let selection = editor?.selection
 
-		editor?.setDecorations(decorationType, [new vscode.Range(0, 0, 0, 1)])
+		let selection_start = selection?.start
+		let selection_end = selection?.end
+
+		editor?.setDecorations(decorationType, [new vscode.Range(selection_start, selection_end)])
 	})
 
 	context.subscriptions.push(disposable)
